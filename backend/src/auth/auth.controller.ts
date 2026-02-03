@@ -1,4 +1,4 @@
-import { Controller, Post, Req, UseGuards } from '@nestjs/common';  
+import { Controller, Get, Post, Req, UseGuards } from '@nestjs/common';  
 
 import { LocalAuthGuard } from './local.guard';
 import { AuthService } from './auth.service';
@@ -15,6 +15,10 @@ export class AuthController {
     return this.authService.signIn(req); 
   }  
 
+  @Get()
+  getall(){
+    return 'hello';
+  }
 //   @Post('logout')  
 //   logout(@Request() req): any {  
 //     req.session.destroy();  
